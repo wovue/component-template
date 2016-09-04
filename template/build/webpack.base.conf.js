@@ -11,7 +11,7 @@ module.exports = {
     fallback: [path.join(__dirname, '../node_modules')],
     alias: {
       'src': path.resolve(__dirname, '../src'),
-      'src-demo': path.resolve(__dirname, '../src-demo')
+      'src-docs': path.resolve(__dirname, '../src-docs')
     },
     modulesDirectories: ['node_modules', 'shared']
   },

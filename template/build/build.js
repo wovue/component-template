@@ -8,7 +8,7 @@ var path = require('path')
 var prodConfig = require('../config').prod
 var ora = require('ora')
 var webpack = require('webpack')
-var webpackDemoConfig = require('./webpack.prod.demo.conf')
+var webpackDocsConfig = require('./webpack.prod.docs.conf')
 var webpackDistConfig = require('./webpack.prod.dist.conf')
 
 console.log(
@@ -20,16 +20,16 @@ console.log(
 var spinner = ora('building for production...')
 spinner.start()
 
-var demoPath = prodConfig.demo.assetsRoot
-rm('-rf', demoPath)
-mkdir('-p', demoPath)
-cp('-R', 'static/', demoPath)
+var docsFolderPath = prodConfig.docs.assetsRoot
+rm('-rf', docsFolderPath)
+mkdir('-p', docsFolderPath)
+cp('-R', 'static/', docsFolderPath)
 
-var distPath = prodConfig.dist.assetsRoot
-rm('-rf', distPath)
-mkdir('-p', distPath)
+var distFolderPath = prodConfig.dist.assetsRoot
+rm('-rf', distFolderPath)
+mkdir('-p', distFolderPath)
 
-webpack(webpackDemoConfig, function (err, stats) {
+webpack(webpackDocsConfig, function (err, stats) {
   spinner.stop()
   if (err) throw err
   process.stdout.write(stats.toString({

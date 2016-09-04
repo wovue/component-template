@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "node build/dev-server.js",
     "build": "node build/build.js",
-    "deploy": "gh-pages -d gh-pages",
+    "deploy-docs": "gh-pages -d docs",
     {{#unit}}
     "unit": "karma start test/unit/karma.conf.js --single-run",
     {{/unit}}

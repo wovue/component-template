@@ -3,14 +3,14 @@ var path = require('path')
 
 module.exports = {
   prod: {
-    demo: {
+    docs: {
       env: require('./prod.env'),
-      index: path.resolve(__dirname, '../gh-pages/index.html'),
-      assetsRoot: path.resolve(__dirname, '../gh-pages'),
+      index: path.resolve(__dirname, '../docs/index.html'), // html-webpack-plugin output
+      assetsRoot: path.resolve(__dirname, '../docs'),
       assetsSubDirectory: 'static',
-      assetsPublicPath: '/' + JSON.parse(require('./prod.env').GH_REPO_NAME), // replace repoName
+      assetsPublicPath: '/' + JSON.parse(require('./prod.env').GH_REPO_NAME),
       productionSourceMap: true,
-      templatePath: path.resolve(__dirname, '../src-demo/index.html'),
+      templatePath: path.resolve(__dirname, '../src-docs/index.html'),
       // Gzip off by default as many popular static hosts such as
       // Surge or Netlify already gzip all static assets for you.
       // Before setting to `true`, make sure to:
@@ -21,7 +21,6 @@ module.exports = {
     dist: {
       env: require('./prod.env'),
       assetsRoot: path.resolve(__dirname, '../dist'),
-      // assetsSubDirectory: '',
       assetsPublicPath: '/',
       productionSourceMap: false,
       // Gzip off by default as many popular static hosts such as

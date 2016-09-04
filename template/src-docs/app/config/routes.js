@@ -1,5 +1,5 @@
-import HomePage from 'src-demo/app/pages/HomePage'
-import DefaultPage from 'src-demo/app/pages/DefaultPage'
+import HomePage from 'src-docs/app/pages/HomePage'
+import DefaultPage from 'src-docs/app/pages/DefaultPage'
 
 export const routes = {
   '/': {

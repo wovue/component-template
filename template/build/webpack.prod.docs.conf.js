@@ -8,25 +8,25 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 var env = process.env.NODE_ENV === 'testing'
   ? require('../config/test.env')
-  : prodConfig.demo.env
+  : prodConfig.docs.env
 
 var webpackConfig = merge(baseWebpackConfig, {
   entry: {
-    app: './src-demo/app/main.js'
+    app: './src-docs/app/main.js'
   },
   module: {
-    loaders: utils.styleLoaders({ sourceMap: prodConfig.demo.productionSourceMap, extract: true })
+    loaders: utils.styleLoaders({ sourceMap: prodConfig.docs.productionSourceMap, extract: true })
   },
-  devtool: prodConfig.demo.productionSourceMap ? '#source-map' : false,
+  devtool: prodConfig.docs.productionSourceMap ? '#source-map' : false,
   output: {
-    path: prodConfig.demo.assetsRoot,
-    publicPath: prodConfig.demo.assetsPublicPath,
+    path: prodConfig.docs.assetsRoot,
+    publicPath: prodConfig.docs.assetsPublicPath,
     filename: utils.assetsPath('js/[name].js'),
     chunkFilename: utils.assetsPath('js/[id].js')
   },
   vue: {
     loaders: utils.cssLoaders({
-      sourceMap: prodConfig.demo.productionSourceMap,
+      sourceMap: prodConfig.docs.productionSourceMap,
       extract: true
     })
   },
@@ -49,8 +49,8 @@ var webpackConfig = merge(baseWebpackConfig, {
     new HtmlWebpackPlugin({
       filename: process.env.NODE_ENV === 'testing'
         ? 'index.html'
-        : prodConfig.demo.index,
-      template: prodConfig.demo.templatePath,
+        : prodConfig.docs.index,
+      template: prodConfig.docs.templatePath,
       inject: true,
       minify: {
         removeComments: true,
@@ -85,7 +85,7 @@ var webpackConfig = merge(baseWebpackConfig, {
   ]
 })
 
-if (prodConfig.demo.productionGzip) {
+if (prodConfig.docs.productionGzip) {
   var CompressionWebpackPlugin = require('compression-webpack-plugin')
 
   webpackConfig.plugins.push(
@@ -94,7 +94,7 @@ if (prodConfig.demo.productionGzip) {
       algorithm: 'gzip',
       test: new RegExp(
         '\\.(' +
-        prodConfig.demo.productionGzipExtensions.join('|') +
+        prodConfig.docs.productionGzipExtensions.join('|') +
         ')$'
       ),
       threshold: 10240,

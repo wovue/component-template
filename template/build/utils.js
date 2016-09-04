@@ -4,7 +4,7 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 exports.assetsPath = function (_path, isDist) {
   var assetsSubDirectory = process.env.NODE_ENV === 'production'
-    ? config.prod.demo.assetsSubDirectory
+    ? config.prod.docs.assetsSubDirectory
     : config.dev.assetsSubDirectory
 
   if (isDist) {

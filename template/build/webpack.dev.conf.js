@@ -7,10 +7,10 @@ var HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = merge(baseWebpackConfig, {
   entry: {
-    app: ['./build/dev-client', './src-demo/app/main.js']
+    app: ['./build/dev-client', './src-docs/app/main.js']
   },
   output: {
-    path: config.prod.demo.assetsRoot,
+    path: config.prod.docs.assetsRoot,
     publicPath: config.dev.assetsPublicPath
   },
   module: {
@@ -29,7 +29,7 @@ module.exports = merge(baseWebpackConfig, {
     // https://github.com/ampedandwired/html-webpack-plugin
     new HtmlWebpackPlugin({
       filename: 'index.html',
-      template: config.prod.demo.templatePath,
+      template: config.prod.docs.templatePath,
       inject: true
     })
   ]
