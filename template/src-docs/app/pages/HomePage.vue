@@ -1,11 +1,7 @@
 <template>
-  <nav>
-    <ul>
-      <li>
-        <a v-link="{name: 'Default'}">Default</a>
-      </li>
-    </ul>
-  </nav>
+  <div>
+    HomePage
+  </div>
 </template>
 
 <script>

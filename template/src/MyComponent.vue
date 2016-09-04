@@ -2,7 +2,7 @@
   <div>
     <p>MyComponent</p>
     <input v-model="msg" type="text"/>
-    <p>{{msg}}</p>
+    <p v-text="msg"></p>
   </div>
 </template>
 
