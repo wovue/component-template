@@ -7,6 +7,7 @@
   "scripts": {
     "dev": "node build/dev-server.js",
     "build": "node build/build.js",
+    "deploy": "gh-pages -d gh-pages",
     {{#unit}}
     "unit": "karma start test/unit/karma.conf.js --single-run",
     {{/unit}}
@@ -20,6 +21,7 @@
     "vue": "^1.0.21"
   },
   "devDependencies": {
+    "gh-pages": "^0.11.0",
     "babel-runtime": "^6.0.0",
     "vue-router": "^0.7.13",
     "node-sass": "^3.8.0",

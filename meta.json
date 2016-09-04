@@ -5,6 +5,11 @@
       "required": true,
       "message": "Project name"
     },
+    "repoName": {
+      "type": "string",
+      "required": true,
+      "message": "Repository name"
+    },
     "description": {
       "type": "string",
       "required": false,

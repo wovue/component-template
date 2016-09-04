@@ -5,12 +5,14 @@ var utils = require('./utils')
 var baseWebpackConfig = require('./webpack.base.conf')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 
-// add hot-reload related code to entry chunks
-Object.keys(baseWebpackConfig.entry).forEach(function (name) {
-  baseWebpackConfig.entry[name] = ['./build/dev-client'].concat(baseWebpackConfig.entry[name])
-})
-
 module.exports = merge(baseWebpackConfig, {
+  entry: {
+    app: ['./build/dev-client', './src-demo/app/main.js']
+  },
+  output: {
+    path: config.prod.demo.assetsRoot,
+    publicPath: config.dev.assetsPublicPath
+  },
   module: {
     loaders: utils.styleLoaders({ sourceMap: config.dev.cssSourceMap })
   },
@@ -27,7 +29,7 @@ module.exports = merge(baseWebpackConfig, {
     // https://github.com/ampedandwired/html-webpack-plugin
     new HtmlWebpackPlugin({
       filename: 'index.html',
-      template: 'index.html',
+      template: config.prod.demo.templatePath,
       inject: true
     })
   ]

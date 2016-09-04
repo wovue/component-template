@@ -2,13 +2,15 @@
 
 > A full-featured Webpack setup with hot-reload, lint-on-save, unit testing & css extraction.
 
+> For reusable components
+
 ## Version Notice
 
 If you are using `vue-cli@1.x`, it will be pulling the `master` branch of this template by default. If you are using `vue-cli@2.x`, it will be pulling the `dist` branch instead, which provides more configurable options thanks to new features in `vue-cli@2.x`. It is recommended to upgrade `vue-cli` as soon as you can.
 
 ## Documentation
 
-Common topics are discussed in the [docs](http://vuejs-templates.github.io/webpack). Make sure to read it!
+This is a fork of [webpack template](http://vuejs-templates.github.io/webpack). Make sure to read it!
 
 ## Usage
 
@@ -36,6 +38,8 @@ $ npm run dev
   - HTML minified with [html-minifier](https://github.com/kangax/html-minifier).
   - CSS across all components extracted into a single file and minified with [cssnano](https://github.com/ben-eb/cssnano).
   - All static assets compiled with version hashes for efficient long-term caching, and a production `index.html` is auto-generated with proper URLs to these generated assets.
+
+- `npm run deploy`: Deploy to `gh-pages` from `gh-pages` folder.
 
 - `npm run unit`: Unit tests run in PhantomJS with [Karma](http://karma-runner.github.io/0.13/index.html) + [Mocha](http://mochajs.org/) + [karma-webpack](https://github.com/webpack/karma-webpack).
   - Supports ES2015 in test files.

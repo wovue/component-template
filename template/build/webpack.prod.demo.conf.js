@@ -1,5 +1,5 @@
 var path = require('path')
-var config = require('../config')
+var prodConfig = require('../config').prod
 var utils = require('./utils')
 var webpack = require('webpack')
 var merge = require('webpack-merge')
@@ -8,21 +8,25 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 var env = process.env.NODE_ENV === 'testing'
   ? require('../config/test.env')
-  : config.build.env
+  : prodConfig.demo.env
 
 var webpackConfig = merge(baseWebpackConfig, {
-  module: {
-    loaders: utils.styleLoaders({ sourceMap: config.build.productionSourceMap, extract: true })
+  entry: {
+    app: './src-demo/app/main.js'
   },
-  devtool: config.build.productionSourceMap ? '#source-map' : false,
+  module: {
+    loaders: utils.styleLoaders({ sourceMap: prodConfig.demo.productionSourceMap, extract: true })
+  },
+  devtool: prodConfig.demo.productionSourceMap ? '#source-map' : false,
   output: {
-    path: config.build.assetsRoot,
-    filename: utils.assetsPath('js/[name].[chunkhash].js'),
-    chunkFilename: utils.assetsPath('js/[id].[chunkhash].js')
+    path: prodConfig.demo.assetsRoot,
+    publicPath: prodConfig.demo.assetsPublicPath,
+    filename: utils.assetsPath('js/[name].js'),
+    chunkFilename: utils.assetsPath('js/[id].js')
   },
   vue: {
     loaders: utils.cssLoaders({
-      sourceMap: config.build.productionSourceMap,
+      sourceMap: prodConfig.demo.productionSourceMap,
       extract: true
     })
   },
@@ -38,15 +42,15 @@ var webpackConfig = merge(baseWebpackConfig, {
     }),
     new webpack.optimize.OccurenceOrderPlugin(),
     // extract css into its own file
-    new ExtractTextPlugin(utils.assetsPath('css/[name].[contenthash].css')),
+    new ExtractTextPlugin(utils.assetsPath('css/[name].css')),
     // generate dist index.html with correct asset hash for caching.
     // you can customize output by editing /index.html
     // see https://github.com/ampedandwired/html-webpack-plugin
     new HtmlWebpackPlugin({
       filename: process.env.NODE_ENV === 'testing'
         ? 'index.html'
-        : config.build.index,
-      template: 'index.html',
+        : prodConfig.demo.index,
+      template: prodConfig.demo.templatePath,
       inject: true,
       minify: {
         removeComments: true,
@@ -81,7 +85,7 @@ var webpackConfig = merge(baseWebpackConfig, {
   ]
 })
 
-if (config.build.productionGzip) {
+if (prodConfig.demo.productionGzip) {
   var CompressionWebpackPlugin = require('compression-webpack-plugin')
 
   webpackConfig.plugins.push(
@@ -90,7 +94,7 @@ if (config.build.productionGzip) {
       algorithm: 'gzip',
       test: new RegExp(
         '\\.(' +
-        config.build.productionGzipExtensions.join('|') +
+        prodConfig.demo.productionGzipExtensions.join('|') +
         ')$'
       ),
       threshold: 10240,

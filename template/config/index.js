@@ -2,19 +2,35 @@
 var path = require('path')
 
 module.exports = {
-  build: {
-    env: require('./prod.env'),
-    index: path.resolve(__dirname, '../dist/index.html'),
-    assetsRoot: path.resolve(__dirname, '../dist'),
-    assetsSubDirectory: 'static',
-    assetsPublicPath: '/',
-    productionSourceMap: true,
-    // Gzip off by default as many popular static hosts such as
-    // Surge or Netlify already gzip all static assets for you.
-    // Before setting to `true`, make sure to:
-    // npm install --save-dev compression-webpack-plugin
-    productionGzip: false,
-    productionGzipExtensions: ['js', 'css']
+  prod: {
+    demo: {
+      env: require('./prod.env'),
+      index: path.resolve(__dirname, '../gh-pages/index.html'),
+      assetsRoot: path.resolve(__dirname, '../gh-pages'),
+      assetsSubDirectory: 'static',
+      assetsPublicPath: '/' + JSON.parse(require('./prod.env').GH_REPO_NAME), // replace repoName
+      productionSourceMap: true,
+      templatePath: path.resolve(__dirname, '../src-demo/index.html'),
+      // Gzip off by default as many popular static hosts such as
+      // Surge or Netlify already gzip all static assets for you.
+      // Before setting to `true`, make sure to:
+      // npm install --save-dev compression-webpack-plugin
+      productionGzip: false,
+      productionGzipExtensions: ['js', 'css']
+    },
+    dist: {
+      env: require('./prod.env'),
+      assetsRoot: path.resolve(__dirname, '../dist'),
+      // assetsSubDirectory: '',
+      assetsPublicPath: '/',
+      productionSourceMap: false,
+      // Gzip off by default as many popular static hosts such as
+      // Surge or Netlify already gzip all static assets for you.
+      // Before setting to `true`, make sure to:
+      // npm install --save-dev compression-webpack-plugin
+      productionGzip: false,
+      productionGzipExtensions: ['js', 'css']
+    }
   },
   dev: {
     env: require('./dev.env'),
