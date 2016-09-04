@@ -21,7 +21,9 @@ var webpackConfig = merge(baseWebpackConfig, {
     path: prodConfig.dist.assetsRoot,
     publicPath: prodConfig.dist.assetsPublicPath,
     filename: utils.assetsPath('[name].js', true),
-    chunkFilename: utils.assetsPath('[id].js', true)
+    chunkFilename: utils.assetsPath('[id].js', true),
+    // build for AMD, CommonJS2 and UMD
+    libraryTarget: 'umd'
   },
   vue: {
     loaders: utils.cssLoaders({
