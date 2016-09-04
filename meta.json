@@ -3,22 +3,38 @@
     "name": {
       "type": "string",
       "required": true,
-      "message": "Project name"
+      "message": "Component name"
     },
-    "repoName": {
+    "version": {
       "type": "string",
       "required": true,
-      "message": "Repository name"
+      "default": "1.0.0",
+      "message": "Component version"
     },
     "description": {
       "type": "string",
       "required": false,
-      "message": "Project description",
-      "default": "A Vue.js project"
+      "default": "A Vue.js component",
+      "message": "Component description"
+    },
+    "repoUser": {
+      "type": "string",
+      "required": true,
+      "message": "Github User/Organization name"
+    },
+    "repoName": {
+      "type": "string",
+      "required": true,
+      "message": "Github repository name"
     },
     "author": {
       "type": "string",
       "message": "Author"
+    },
+    "license": {
+      "type": "string",
+      "default": "MIT",
+      "message": "License"
     },
     "lint": {
       "type": "confirm",

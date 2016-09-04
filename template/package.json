@@ -1,9 +1,8 @@
 {
   "name": "{{ name }}",
-  "version": "1.0.0",
+  "version": "{{ version }}",
   "description": "{{ description }}",
-  "author": "{{ author }}",
-  "private": true,
+  "main": "dist/index.js",
   "scripts": {
     "dev": "node build/dev-server.js",
     "build": "node build/build.js",
@@ -17,6 +16,20 @@
     "test": "{{#unit}}npm run unit{{/unit}}{{#unit}}{{#e2e}} && {{/e2e}}{{/unit}}{{#e2e}}npm run e2e{{/e2e}}"{{#lint}},
     "lint": "eslint --ext .js,.vue src test/unit/specs test/e2e/specs"{{/lint}}
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/{{ repoUser }}/{{ repoName }}.git"
+  },
+  "keywords": [
+    "vue",
+    "component"
+  ],
+  "author": "{{ author }}",
+  "license": "{{ license }}",
+  "bugs": {
+    "url": "https://github.com/{{ repoUser }}/{{ repoName }}/issues"
+  },
+  "homepage": "https://{{ repoUser }}.github.io/{{ repoName }}",
   "dependencies": {
     "vue": "^1.0.21"
   },
