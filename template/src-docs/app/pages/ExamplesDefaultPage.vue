@@ -1,14 +1,15 @@
 <template>
   <div>
-    DefaultPage
+    <h2>Default</h2>
     <my-component></my-component>
   </div>
 </template>
 
 <script>
   import MyComponent from 'src/main'
+
   export default {
-    name: 'DefaultPage',
+    name: 'ExamplesDefaultPage',
     components: {
       MyComponent
     }

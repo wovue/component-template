@@ -1,22 +1,23 @@
 <template>
-  <div>
+  <main>
+    <h1>Examples</h1>
     <nav>
       <ul>
         <li>
-          <a v-link="{name: 'Home', exact: true}">Getting started</a>
+          <a v-link="{name: 'ExamplesDefaultPage', exact: true}">Default</a>
         </li>
         <li>
-          <a v-link="{name: 'Examples'}">Examples</a>
+          <a v-link="{name: 'ExamplesPrimaryPage'}">Primary</a>
         </li>
       </ul>
     </nav>
     <router-view></router-view>
-  </div>
+  </main>
 </template>
 
 <script>
   export default {
-    name: 'Root'
+    name: 'Examples'
   }
 </script>
 

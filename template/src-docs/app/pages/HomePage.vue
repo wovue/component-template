@@ -1,7 +1,7 @@
 <template>
-  <div>
-    HomePage
-  </div>
+  <main>
+    <h1>Getting started</h1>
+  </main>
 </template>
 
 <script>
