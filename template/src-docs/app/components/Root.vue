@@ -1,24 +1,20 @@
 <template>
   <div>
-    <nav>
-      <ul>
-        <li>
-          <a v-link="{name: 'Home', exact: true}">Getting started</a>
-        </li>
-        <li>
-          <a v-link="{name: 'Examples'}">Examples</a>
-        </li>
-      </ul>
-    </nav>
+    <sidebar></sidebar>
     <router-view></router-view>
+    <gh-corner repo-user="{{ repoUser }}" repo-name="{{ repoName }}" color="#EAE8EB" background="#dd5a6f"></gh-corner>
   </div>
 </template>
 
 <script>
+  import GhCorner from './GhCorner'
+  import Sidebar from './Sidebar'
+
   export default {
-    name: 'Root'
+    name: 'Root',
+    components: {
+      GhCorner,
+      Sidebar
+    }
   }
 </script>
-
-<style lang="scss">
-</style>

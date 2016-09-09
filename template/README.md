@@ -1,4 +1,4 @@
-# {{ name }}
+# {{ pascalize name }}
 
 > {{ description }}
 
@@ -8,10 +8,10 @@
 # install dependencies
 npm install
 
-# serve with hot reload at localhost:8080 src-demo folder
+# serve with hot reload src-docs at localhost:8080
 npm run dev
 
-# build for production with minification src-demo and src folders
+# build for production with minification src-docs and src
 npm run build
 
 # copy docs folder to gh-pages branch and push
@@ -35,8 +35,8 @@ npm test
 
 * `src`: component source files
 
-### I have updated the repository name, where i configure it?
+### I have updated the repository name
 
-You have to change it in `config/prod.env.js`, `GH_REPO_NAME` env variable value, don't forget update the `package.json`.
+You have to update `prod.docs.assetsPublicPath` value in `config/index.js`
 
 For detailed explanation on how things work, checkout the [webpack template guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).

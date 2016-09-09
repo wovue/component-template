@@ -1,0 +1,55 @@
+@include component('main') {
+  background: #f9f9f9;
+  position: relative;
+
+  @include desde('md') {
+    min-height: 45em;
+    padding-left: $sidebar-width;
+    transition: .2s cubic-bezier(0.215, 0.61, 0.355, 1);
+  };
+
+  @include element('section') {
+    border-top: 5px solid rgba($color-tertiary, .2);
+    margin-bottom: $vertical-rhythm * 3;
+  }
+
+  @include element('heading') {
+    background: rgba($color-tertiary, .1);
+    border-bottom: 5px solid rgba($color-tertiary, .2);
+    color: $color-tertiary;
+    font-size: 3.5em;
+    margin-bottom: 1em;
+    margin-top: 0;
+    padding: 1em $gutter .5em;
+    text-align: center;
+
+    @include desde('md') {
+      padding: 2em $gutter .5em;
+    };
+  }
+
+  @include element('sub-heading') {
+    color: $color-primary;
+    font-size: 3em;
+    font-weight: bold;
+    margin-top: $vertical-rhythm * 3;
+    margin-bottom: $vertical-rhythm;
+    padding: 0 $gutter 1em;
+    position: relative;
+    text-transform: uppercase;
+
+    &::before {
+      background-color: $color-primary;
+      bottom: 0.15em;
+      content: '';
+      height: 0.2em;
+      left: 0;
+      position: absolute;
+      right: 0;
+    }
+
+    @include desde('md') {
+      padding: 0 $gutter;
+    };
+  }
+}

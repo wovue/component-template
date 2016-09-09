@@ -1,0 +1,73 @@
+@include component('item') {
+
+  @include element('heading') {
+    color: $color-primary;
+    font-size: 2em;
+    font-weight: 300;
+    margin: 0 0 $vertical-rhythm;
+  }
+
+  @include element('code-wrapper') {
+    margin-bottom: $vertical-rhythm;
+  }
+
+  @include element('code') {
+    cursor: text;
+    margin: 0;
+    white-space: normal;
+
+    code {
+      @include card(1);
+      padding: 1em;
+      white-space: pre;
+    }
+  }
+
+  @include element('sub-heading') {
+    color: $black;
+    margin-top: 0;
+    margin-bottom: $vertical-rhythm;
+    font-size: 1.2em;
+  }
+
+  @include element('description') {
+    margin-bottom: $vertical-rhythm;
+  }
+
+  @include element('parameters') {
+    border-collapse: collapse;
+    margin-bottom: 1em;
+    width: 100%;
+
+    thead th {
+      border-bottom: 2px solid $silver;
+      border-top: none;
+      color: mix($black, $white, 52%);
+      text-align: left;
+      text-transform: capitalize;
+      vertical-align: bottom;
+    }
+
+    tbody th {
+      text-align: left;
+    }
+
+    td, th {
+      padding: 0.5em 0.5em 0.5em 0;
+      vertical-align: top;
+    }
+  }
+
+  @include element('parameter') {
+    @include desde('md') {
+      &:first-of-type > td {
+        border-top: none;
+      }
+
+      td,
+      th {
+        border-top: 1px solid $silver;
+      }
+    };
+  }
+}

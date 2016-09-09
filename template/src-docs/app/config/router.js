@@ -1,13 +1,13 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
-import {routes} from 'src-docs/app/config/routes'
+import {routes} from './routes'
 
 Vue.use(VueRouter)
 
 const router = new VueRouter({
-  hashbang: true, // enable in development
-  history: false, // disable in development
+  hashbang: true,
+  history: false,
   linkActiveClass: 'is-active',
   transitionOnLoad: true
 })

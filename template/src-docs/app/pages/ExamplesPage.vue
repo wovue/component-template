@@ -1,17 +1,10 @@
 <template>
-  <main>
-    <h1>Examples</h1>
-    <nav>
-      <ul>
-        <li>
-          <a v-link="{name: 'ExamplesDefaultPage', exact: true}">Default</a>
-        </li>
-        <li>
-          <a v-link="{name: 'ExamplesPrimaryPage'}">Primary</a>
-        </li>
-      </ul>
-    </nav>
-    <router-view></router-view>
+  <main class="c-main">
+    <section class="c-main__section">
+      <h2 class="c-main__heading">Examples</h2>
+      <router-view></router-view>
+    </section>
+    <app-footer></app-footer>
   </main>
 </template>
 
@@ -20,6 +13,3 @@
     name: 'Examples'
   }
 </script>
-
-<style lang="scss">
-</style>

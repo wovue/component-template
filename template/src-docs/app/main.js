@@ -2,11 +2,18 @@ require('src-docs/styles/main.scss')
 
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import VueTransferDom from 'vue-transfer-dom'
 
-import router from 'src-docs/app/config/router'
+import Root from './components/Root'
+import {{ pascalize name }} from 'src/main.js'
 
-import Root from 'src-docs/app/components/Root'
+import router from './config/router'
+import registerComponents from './config/registerComponents'
 
 Vue.use(VueRouter)
+Vue.use(VueTransferDom)
+Vue.use({{ pascalize name }})
+
+registerComponents(Vue)
 
 router.start(Root, '#root')
