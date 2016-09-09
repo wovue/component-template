@@ -34,6 +34,12 @@
             </li>
           </ul>
         </li>
+        <li class="c-sidebar__item c-sidebar__item--heading">
+          <a v-link="{name: 'DocsExample'}">Page boilerplate</a>
+        </li>
+        <li class="c-sidebar__item c-sidebar__item--heading">
+          <a v-link="{name: 'DocsMarkdownExample'}">Markdown page boilerplate</a>
+        </li>
       </ul>
     </nav>
   </header>

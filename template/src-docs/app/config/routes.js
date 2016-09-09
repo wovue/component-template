@@ -48,9 +48,5 @@ export const routes = {
   '/docs-markdown-example': {
     name: 'DocsMarkdownExample',
     component: DocsMarkdownExamplePage
-  },
-  '*': {
-    name: 'NotFound',
-    component: HomePage
   }
 }
