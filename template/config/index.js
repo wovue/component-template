@@ -8,7 +8,7 @@ module.exports = {
       index: path.resolve(__dirname, '../docs/index.html'), // html-webpack-plugin output
       assetsRoot: path.resolve(__dirname, '../docs'),
       assetsSubDirectory: 'static',
-      assetsPublicPath: '/' + JSON.parse(require('./prod.env').GH_REPO_NAME),
+      assetsPublicPath: '/{{ repoName }}',
       productionSourceMap: true,
       templatePath: path.resolve(__dirname, '../src-docs/index.html'),
       // Gzip off by default as many popular static hosts such as
