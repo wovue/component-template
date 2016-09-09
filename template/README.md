@@ -27,16 +27,4 @@ npm run e2e
 npm test
 ```
 
-## Docs
-
-### Folders
-
-* `src-docs`: docs source files for deploy to gh-pages
-
-* `src`: component source files
-
-### I have updated the repository name
-
-You have to update `prod.docs.assetsPublicPath` value in `config/index.js`
-
 For detailed explanation on how things work, checkout the [webpack template guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).

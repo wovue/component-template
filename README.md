@@ -10,7 +10,7 @@ If you are using `vue-cli@1.x`, it will be pulling the `master` branch of this t
 
 ## Documentation
 
-This is a fork of [webpack template](http://vuejs-templates.github.io/webpack). Make sure to read it!
+This is a fork of [webpack template](http://vuejs-templates.github.io/webpack). Make sure to read it!, [template docs](https://github.com/wovue/component-template#template-documentation) too.
 
 ## Usage
 
@@ -51,3 +51,31 @@ $ npm run dev
   - Works with one command out of the box:
     - Selenium and chromedriver dependencies automatically handled.
     - Automatically spawns the Selenium server.
+
+## Template documentation
+
+### Folders
+
+* `src-docs`: docs source files for deploy to gh-pages
+
+* `src`: component source files
+
+### `src-docs` structure
+
+```
+.
+├── index.html                # index.html template for HtmlWebpackPlugin
+├── app/                      
+│   ├── main.js               # docs webpack entry file
+│   ├── components/           # ui components in root level
+│   ├── config                # vue global config
+│   ├── pages                 # pages components
+│   ├── shared                # global modules
+│   └── snippets              # code to highlight
+├── assets/                   # module assets (processed by webpack)
+└── styles/                   # docs sass styles
+```
+
+### I have updated the repository name
+
+You have to update `prod.docs.assetsPublicPath` value in `config/index.js`
