@@ -11,7 +11,7 @@ var env = process.env.NODE_ENV === 'testing'
 
 var webpackConfig = merge(baseWebpackConfig, {
   entry: {
-    index: './src/main.js'
+    {{ name }}: './src/main.js'
   },
   module: {
     loaders: utils.styleLoaders({ sourceMap: prodConfig.dist.productionSourceMap, extract: true })
