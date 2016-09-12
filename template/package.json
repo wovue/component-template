@@ -34,6 +34,7 @@
     "vue": "^1.0.21"
   },
   "devDependencies": {
+    "marked": "^0.3.6",
     "highlight.js": "^9.6.0",
     "html-loader": "^0.4.3",
     "markdown-highlight-loader": "^0.1.2",
