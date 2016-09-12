@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html>
   <head>
@@ -11,3 +12,4 @@
     <script src="path/to/app.js"></script>
   </body>
 </html>
+```

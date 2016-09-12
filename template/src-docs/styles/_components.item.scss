@@ -9,12 +9,11 @@
 
   @include element('code-wrapper') {
     margin-bottom: $vertical-rhythm;
-  }
 
-  @include element('code') {
-    cursor: text;
-    margin: 0;
-    white-space: normal;
+    pre {
+      cursor: text;
+      white-space: normal;
+    }
 
     code {
       @include card(1);

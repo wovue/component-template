@@ -34,11 +34,12 @@
     "vue": "^1.0.21"
   },
   "devDependencies": {
+    "highlight.js": "^9.6.0",
+    "html-loader": "^0.4.3",
+    "markdown-highlight-loader": "^0.1.2",
     "babel-runtime": "^6.0.0",
     "gh-pages": "^0.11.0",
     "github-markdown-css": "^2.4.0",
-    "highlight.js": "^9.6.0",
-    "marked": "^0.3.6",
     "node-sass": "^3.8.0",
     "raw-loader": "^0.5.1",
     "sanitize.css": "^4.1.0",

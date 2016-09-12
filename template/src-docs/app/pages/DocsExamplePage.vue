@@ -12,9 +12,7 @@
             <p>Description</p>
           </div>
           <h5 class="c-item__sub-heading">Item sub title</h5>
-          <div class="c-item__code-wrapper">
-            <app-code class="c-item__code" code="console.log('hello');"></app-code>
-          </div>
+          <div class="c-item__code-wrapper" v-html="snippet"></div>
           <h5 class="c-item__sub-heading">Table</h5>
           <app-table :data="table"></app-table>
         </div>
@@ -25,10 +23,13 @@
 </template>
 
 <script>
+  import snippet from 'src-docs/app/snippets/installation.md'
+
   export default {
     name: 'DocsExamplePage',
     data () {
       return {
+        snippet,
         table: [
           {
             name: 'David',
