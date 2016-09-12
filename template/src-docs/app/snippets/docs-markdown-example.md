@@ -1,27 +1,27 @@
 # Create pages using markdown
 
-Just create a new component in `pages` folder, and drop your markdown to `AppMarkdown` component, it will be parsed with [marked](https://github.com/chjj/marked) and [highlight.js](https://github.com/isagalaev/highlight.js)
+Just create a new component in `pages` folder, and import your markdown file, it will be pre-processed by [markdown loader](https://www.npmjs.com/package/markdown-loader) and [html loader](https://github.com/webpack/html-loader).
 
 ```vue
 <template>
   <main class="c-main">
     <div class="u-gutter">
-      <!-- pass markdown string to AppMarkdown component -->
-      <app-markdown :markdown="markdown"></app-markdown>
+      <!-- insert plain HTML data -->
+      <article class="markdown-body c-markdown-body" v-html="docsMarkdownExample"></article>
     </div>
     <app-footer></app-footer>
   </main>
 </template>
 
 <script>
-  // import markdown file using raw loader
-  import docsMarkdownExample from '!!raw!src-docs/app/snippets/docs-markdown-example.md'
+  // import markdown
+  import docsMarkdownExample from 'src-docs/app/snippets/docs-markdown-example.md'
 
   export default {
     name: 'DocsMarkdownExamplePage',
     data () {
       return {
-        markdown: docsMarkdownExample
+        docsMarkdownExample
       }
     }
   }
