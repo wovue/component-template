@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="c-main__sub-section">
     <h3 class="c-main__sub-heading u-gutter">Usage</h3>
     <div class="c-item u-gutter">
       <div class="c-item__description">

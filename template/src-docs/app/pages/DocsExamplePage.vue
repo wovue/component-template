@@ -1,20 +1,19 @@
 <template>
-  <main class="c-main">
+  <main class="c-main" role="main">
     <section class="c-main__section">
-      <header>
-        <h2 class="c-main__heading u-gutter">Main title</h2>
-      </header>
-      <section>
+      <h2 class="c-main__heading u-gutter">Main title</h2>
+      <section class="c-main__sub-section">
         <h3 class="c-main__sub-heading u-gutter">Main sub title</h3>
         <div class="c-item u-gutter">
           <h4 class="c-item__heading">Item title</h4>
           <div class="c-item__description">
-            <p>Description</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</p>
+            <p>Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
           </div>
-          <h5 class="c-item__sub-heading">Item sub title</h5>
+          <h5 class="c-item__sub-heading">Item sub title (code)</h5>
           <div class="c-item__code-wrapper" v-html="snippet"></div>
-          <h5 class="c-item__sub-heading">Table</h5>
-          <app-table :data="table"></app-table>
+          <h5 class="c-item__sub-heading">Item sub title (table)</h5>
+          <app-table class="c-item__table" :data="table"></app-table>
         </div>
       </section>
     </section>

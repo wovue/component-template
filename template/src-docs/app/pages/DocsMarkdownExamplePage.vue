@@ -1,8 +1,6 @@
 <template>
   <main class="c-main">
-    <div class="u-gutter">
-      <article class="markdown-body c-markdown-body" v-html="docsMarkdownExample"></article>
-    </div>
+    <article class="markdown-body c-markdown-body u-gutter" v-html="docsMarkdownExample"></article>
     <app-footer></app-footer>
   </main>
 </template>
@@ -19,3 +17,9 @@
     }
   }
 </script>
+
+<style lang="scss">
+  // main.scss
+  // @import "~github-markdown-css";
+  // _components.markdown-body.scss
+</style>
