@@ -1,11 +1,9 @@
 @include component('main') {
   background: #f9f9f9;
-  position: relative;
 
   @include desde('md') {
     min-height: 45em;
     padding-left: $sidebar-width;
-    transition: .2s cubic-bezier(0.215, 0.61, 0.355, 1);
   };
 
   @include element('section') {
@@ -17,26 +15,37 @@
     background: rgba($color-tertiary, .1);
     border-bottom: 5px solid rgba($color-tertiary, .2);
     color: $color-tertiary;
-    font-size: 3.5em;
-    margin-bottom: 1em;
-    margin-top: 0;
-    padding: 1em $gutter .5em;
+    font-size: 3.5rem;
+    margin: 0 0 1em;
+    padding-bottom: 0.5em;
+    padding-top: 1em;
     text-align: center;
+    text-transform: capitalize;
 
     @include desde('md') {
-      padding: 2em $gutter .5em;
+      padding-bottom: 0.5em;
+      padding-top: 2em;
     };
+  }
+
+  @include element('sub-section') {
+    margin-bottom: $vertical-rhythm * 3;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 
   @include element('sub-heading') {
     color: $color-primary;
-    font-size: 3em;
+    font-size: 3rem;
     font-weight: bold;
-    margin-top: $vertical-rhythm * 3;
-    margin-bottom: $vertical-rhythm;
-    padding: 0 $gutter 1em;
+    margin: 0 0 $vertical-rhythm;
+    overflow: hidden;
     position: relative;
+    text-overflow: ellipsis;
     text-transform: uppercase;
+    white-space: nowrap;
 
     &::before {
       background-color: $color-primary;
@@ -48,8 +57,8 @@
       right: 0;
     }
 
-    @include desde('md') {
-      padding: 0 $gutter;
+    @include hasta('md') {
+      padding-bottom: 1em;
     };
   }
 }

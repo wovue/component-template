@@ -1,8 +1,13 @@
 @include component('item') {
+  margin-bottom: $vertical-rhythm;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 
   @include element('heading') {
     color: $color-primary;
-    font-size: 2em;
+    font-size: 2rem;
     font-weight: 300;
     margin: 0 0 $vertical-rhythm;
   }
@@ -24,49 +29,88 @@
 
   @include element('sub-heading') {
     color: $black;
-    margin-top: 0;
-    margin-bottom: $vertical-rhythm;
-    font-size: 1.2em;
+    margin: 0 0 $vertical-rhythm;
+    font-size: 1.2rem;
   }
 
   @include element('description') {
     margin-bottom: $vertical-rhythm;
+
+    p {
+      margin: 0;
+
+      &:not(:last-child) {
+        margin-bottom: 1em;
+      }
+    }
   }
 
-  @include element('parameters') {
+  @include element('table') {
     border-collapse: collapse;
     margin-bottom: 1em;
+    text-align: left;
     width: 100%;
 
     thead th {
       border-bottom: 2px solid $silver;
       border-top: none;
-      color: mix($black, $white, 52%);
-      text-align: left;
+      color: #707070;
       text-transform: capitalize;
       vertical-align: bottom;
-    }
-
-    tbody th {
-      text-align: left;
     }
 
     td, th {
       padding: 0.5em 0.5em 0.5em 0;
       vertical-align: top;
     }
-  }
 
-  @include element('parameter') {
+    p {
+      margin: 0 0 ($vertical-rhythm / 3);
+    }
+
     @include desde('md') {
-      &:first-of-type > td {
-        border-top: none;
-      }
+      tbody {
+        tr:first-of-type > td {
+          border-top: none;
+        }
 
-      td,
-      th {
-        border-top: 1px solid $silver;
+        td,
+        th {
+          border-top: 1px solid $silver;
+        }
       }
     };
+
+    @include hasta('md') {
+      &,
+      tbody,
+      tr,
+      td,
+      th {
+        display: block;
+      }
+
+      thead {
+        @include screen-reader();
+      }
+
+      tr {
+        border-bottom: 2px solid $silver;
+        margin-bottom: 1em;
+        padding-bottom: 1em;
+      }
+
+      td, th {
+        &::before {
+          content: attr(data-label) ': ';
+          font-weight: bold;
+          text-transform: capitalize;
+        }
+      }
+
+      p {
+        display: inline;
+      }
+    }
   }
 }
