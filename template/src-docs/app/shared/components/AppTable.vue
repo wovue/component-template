@@ -1,12 +1,12 @@
 <template>
-  <table class="c-item__parameters">
+  <table>
     <thead>
       <tr>
         <th v-for="column in columns" scope="col"><span class="o-screen-reader">\{{ heading }} </span>\{{ column }}</th>
       </tr>
     </thead>
     <tbody>
-      <tr v-for="row in data" class="c-item__parameter">
+      <tr v-for="row in data">
         <td v-for="column in columns" scope="row" :data-label="column">\{{{ row[column] ? marked(row[column]) : empty }}}</td>
       </tr>
     </tbody>
