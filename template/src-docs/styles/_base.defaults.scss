@@ -6,11 +6,11 @@ a {
   transition: 0.15s;
   text-decoration: none;
   color: $color-primary;
-}
 
-a:hover,
-a:active {
-  color: $black;
+  &:hover,
+  &:active {
+    color: $black;
+  }
 }
 
 code,
@@ -18,11 +18,4 @@ kbd,
 pre,
 samp {
   font-family: 'Fira mono', monospace, monospace;
-}
-
-:not(pre) > code {
-  color: $color-primary;
-  font-weight: normal;
-  font: 1em/1.35 'Fira mono', monospace, monospace;
-  white-space: nowrap;
 }

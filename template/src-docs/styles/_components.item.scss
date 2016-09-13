@@ -5,6 +5,13 @@
     margin-bottom: 0;
   }
 
+  :not(pre) > code {
+    color: $color-primary;
+    font-weight: normal;
+    font: 1em/1.35 'Fira mono', monospace, monospace;
+    white-space: nowrap;
+  }
+
   @include element('heading') {
     color: $color-primary;
     font-size: 2rem;
