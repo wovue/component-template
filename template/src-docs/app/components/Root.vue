@@ -2,7 +2,7 @@
   <div>
     <sidebar></sidebar>
     <router-view></router-view>
-    <gh-corner repo-user="{{ repoUser }}" repo-name="{{ repoName }}" color="#EAE8EB" background="#dd5a6f"></gh-corner>
+    <gh-corner v-transfer-dom repo-user="{{ repoUser }}" repo-name="{{ repoName }}" color="#EAE8EB" background="#dd5a6f"></gh-corner>
   </div>
 </template>
 
