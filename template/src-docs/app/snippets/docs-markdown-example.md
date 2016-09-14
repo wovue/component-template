@@ -5,10 +5,8 @@ Just create a new component in `pages` folder, and import your markdown file, it
 ```vue
 <template>
   <main class="c-main">
-    <div class="u-gutter">
-      <!-- insert plain HTML data -->
-      <article class="markdown-body c-markdown-body" v-html="docsMarkdownExample"></article>
-    </div>
+    <!-- insert plain HTML data -->
+    <article class="markdown-body c-markdown-body u-gutter" v-html="docsMarkdownExample"></article>
     <app-footer></app-footer>
   </main>
 </template>
