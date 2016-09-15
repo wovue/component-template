@@ -30,7 +30,7 @@
     "url": "https://github.com/{{ repoUser }}/{{ repoName }}/issues"
   },
   "homepage": "https://{{ repoUser }}.github.io/{{ repoName }}",
-  "dependencies": {
+  "peerDependencies": {
     "vue": "^1.0.21"
   },
   "devDependencies": {
