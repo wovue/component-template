@@ -33,6 +33,11 @@ module.exports = {
       'required': true,
       'message': 'Github repository name'
     },
+    'packageName': {
+      'type': 'string',
+      'required': true,
+      'message': 'NPM package name'
+    },
     'author': {
       'type': 'string',
       'message': 'Author'

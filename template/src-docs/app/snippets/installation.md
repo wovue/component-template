@@ -1,3 +1,3 @@
 ```sh
-$ npm install {{ name }} --save
+$ npm install {{ packageName }} --save
 ```

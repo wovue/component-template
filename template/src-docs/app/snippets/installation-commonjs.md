@@ -1,10 +1,10 @@
 ```js
 // app.js
 
-require('{{ name }}/dist/{{ name }}.css')
+require('{{ packageName }}/dist/{{ name }}.css')
 
 import Vue from 'vue'
-import {{ pascalize name }} from '{{ name }}'
+import {{ pascalize name }} from '{{ packageName }}'
 
 Vue.use({{ pascalize name }})
 ```
